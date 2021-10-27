@@ -5,7 +5,7 @@ import './MainHeader.css';
 const MainHeader = (props) => {
   return (
     <header className="main-header">
-      Index Training Resources
+      Index Training
       {props.children}
     </header>
   );

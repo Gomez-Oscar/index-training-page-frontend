@@ -13,6 +13,10 @@
     color: white;
 }
 
+.main-header h1 {
+    text-align: center;
+}
+
 main {
     margin-top: 5rem;
 }
