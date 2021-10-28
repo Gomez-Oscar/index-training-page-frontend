@@ -5,10 +5,6 @@ import './SearchBar.css';
 
 const Searchbar = () => {
   return (
-    /*     <div className="search-bar-container">
-      <input type="text" placeholder="xml training" className="search-bar" />
-      <button className="search-button"></button>
-    </div> */
     <div className="search-wrap">
       <div className="search-box">
         <input
@@ -17,7 +13,7 @@ const Searchbar = () => {
           placeholder="xml training"
         />
         <button className="search-btn">
-          <FaSearch size="25px" />
+          <FaSearch size="22px" />
         </button>
       </div>
     </div>

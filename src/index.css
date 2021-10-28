@@ -8,6 +8,7 @@ body {
 }
 
 :root {
+    --blue-hover: #8ecce2;
     --dark-slate-gray: #424242;
     /* talent colors */
     /* primary colors */

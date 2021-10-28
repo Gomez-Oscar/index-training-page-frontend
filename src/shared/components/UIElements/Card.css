@@ -8,10 +8,12 @@
     transition: transform 200ms ease-in;
     border: 2px solid var(--blue-dark-t);
     background-color: var(--blue-cream-t);
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .card:hover {
-    transform: scale(1.02);
+    background-color: var(--blue-hover);
 }
 
 .card-img {
@@ -19,7 +21,6 @@
     width: 100%;
     object-fit: cover;
     padding: 10px;
-    border-radius: 10px;
 }
 
 .card-button {
@@ -28,10 +29,8 @@
     font-weight: bold;
     font-size: 1rem;
     margin: 10px;
-    /* border-style: none; */
     border-radius: 5px;
     border: 1px solid var(--blue-dark-t);
-    /* background: transparent; */
     cursor: pointer;
     color: var(--blue-dark-t);
 }
