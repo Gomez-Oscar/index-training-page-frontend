@@ -1,14 +1,16 @@
 .main-title {
     text-align: center;
     display: block;
-    margin-top: 3rem;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    color: var(--purple-dark);
 }
 
 .secondary-title {
     text-align: center;
     display: block;
     margin-top: 5%;
-    color: #ae97d6;
+    color: var(--purple-ligth);
 }
 
 .wrapper {

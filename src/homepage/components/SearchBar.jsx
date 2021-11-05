@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../shared/components/FormElements/Button';
 import { FaSearch } from 'react-icons/fa';
 
 import './SearchBar.css';
@@ -12,9 +13,9 @@ const Searchbar = () => {
           className="search-input"
           placeholder="xml training"
         />
-        <button className="search-btn">
+        <Button search>
           <FaSearch size="22px" />
-        </button>
+        </Button>
       </div>
     </div>
   );

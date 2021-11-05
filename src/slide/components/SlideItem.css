@@ -1,0 +1,64 @@
+.slide-item {
+    margin: 1rem;
+    width: 20rem;
+}
+
+.slide-item__content {
+    /* padding: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: black;
+}
+
+
+/* el Link seria el a */
+
+
+/* .slide-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: black;
+} */
+
+.slide-item__content:hover {
+    background-color: var(--blue-hover);
+}
+
+.slide-item__title {
+    display: flex;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--purple-dark);
+    font-weight: bold;
+}
+
+.slide-item__title:active {
+    color: black;
+}
+
+.slide-item__image {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-item__image img {
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

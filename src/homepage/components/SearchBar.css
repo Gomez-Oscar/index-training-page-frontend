@@ -22,19 +22,3 @@
     border-style: none;
     border: solid 3px var(--blue-cream-t);
 }
-
-.search-wrap .search-box .search-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 100%;
-    border-radius: 5px;
-    background-color: var(--blue-cream-t);
-    border-style: none;
-    cursor: pointer;
-}
-
-.search-wrap .search-box .search-btn:hover {
-    background-color: var(--blue-hover);
-}

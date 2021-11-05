@@ -1,0 +1,14 @@
+.slide-selected-item__title {
+    text-align: center;
+    color: var(--purple-dark);
+}
+
+.slide-selected-item__image {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.slide-selected-item__image img {
+    width: 100%;
+}
