@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 import Card from '../../shared/components/UIElements/Card';
 import Button from '../../shared/components/FormElements/Button';
@@ -9,15 +8,13 @@ const SlideItem = (props) => {
   return (
     <li className="slide-item">
       <Card className="slide-item__content">
-        {/* <Link to={`/${props.id}/slides`}> */}
         <h3 className="slide-item__title">{props.title}</h3>
         <div className="slide-item__image">
           <img src={props.image} alt="" />
         </div>
-        <Button to={`/${props.id}/slides`} view>
+        <Button to={`/slides/${props.id}`} view>
           View
         </Button>
-        {/* </Link> */}
       </Card>
     </li>
   );

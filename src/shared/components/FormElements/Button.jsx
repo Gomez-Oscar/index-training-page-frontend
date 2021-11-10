@@ -10,7 +10,7 @@ const Button = (props) => {
         className={`${props.view && 'view-button'} ${
           props.danger && 'button--danger'
         } ${props.search && 'search-button'} ${
-          props.view_slides && 'view-slides-button'
+          props.view_homepage && 'view-homepage-button'
         }`}
         href={props.href}
       >
@@ -26,7 +26,7 @@ const Button = (props) => {
         className={`${props.view && 'view-button'} ${
           props.danger && 'button--danger'
         } ${props.search && 'search-button'} ${
-          props.view_slides && 'view-slides-button'
+          props.view_homepage && 'view-homepage-button'
         }`}
       >
         {props.children}
@@ -38,7 +38,7 @@ const Button = (props) => {
       className={`${props.view && 'view-button'} ${
         props.danger && 'button--danger'
       } ${props.search && 'search-button'} ${
-        props.view_slides && 'view-slides-button'
+        props.view_homepage && 'view-homepage-button'
       }`}
       type={props.type}
       onClick={props.onClick}

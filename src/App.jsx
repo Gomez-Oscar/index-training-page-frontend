@@ -30,22 +30,22 @@ const App = () => {
           <Route path="/" exact>
             <h1 className="main-title">Index Training Resources</h1>
             <Searchbar />
-            <Button to="/slides" view_slides>
+            <Button to="/slides" view_homepage>
               Slides
             </Button>
-            <Button to="/" view_slides>
+            <Button to="/" view_homepage>
               Recordings
             </Button>
           </Route>
+          <Route path="/slides/:slideId" exact>
+            <SlideSelected />
+          </Route>
           <Route path="/slides" exact>
             <h2 className="secondary-title">Slides</h2>
-            <div className="wrapper"></div>
+            {/* <div className="wrapper"></div> */}
             <Carousel breakPoints={breakPoints}>
               <Slides />
             </Carousel>
-          </Route>
-          <Route path="/:slideId/slides" exact>
-            <SlideSelected />
           </Route>
           <Redirect to="/" />
         </Switch>

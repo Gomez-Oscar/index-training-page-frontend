@@ -4,7 +4,6 @@
 }
 
 .slide-item__content {
-    /* padding: 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,21 +13,6 @@
     padding: 0.5rem;
     color: black;
 }
-
-
-/* el Link seria el a */
-
-
-/* .slide-item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    padding: 0.5rem;
-    color: black;
-} */
 
 .slide-item__content:hover {
     background-color: var(--blue-hover);
@@ -41,10 +25,6 @@
     margin-bottom: 5px;
     color: var(--purple-dark);
     font-weight: bold;
-}
-
-.slide-item__title:active {
-    color: black;
 }
 
 .slide-item__image {

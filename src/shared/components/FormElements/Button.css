@@ -36,7 +36,7 @@
     color: white;
 }
 
-.view-slides-button {
+.view-homepage-button {
     display: block;
     text-align: center;
     width: 50%;
@@ -51,7 +51,7 @@
     text-decoration: none;
 }
 
-.view-slides-button:hover {
+.view-homepage-button:hover {
     background-color: var(--blue-dark-t);
     color: white;
 }
