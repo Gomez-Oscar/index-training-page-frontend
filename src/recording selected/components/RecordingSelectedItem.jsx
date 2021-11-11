@@ -1,15 +1,15 @@
 import React from 'react';
 
-import './SlideSelectedItem.css';
+import './RecordingSelectedItem.css';
 
-const SlideSelectedItem = (props) => {
+const RecordingSelectedItem = (props) => {
   return (
     <React.Fragment>
-      {props.items.map((slide) => (
+      {props.items.map((rec) => (
         <React.Fragment>
-          <h2 className="slide-selected-item__title">{slide.title}</h2>
-          <div className="slide-selected-item__image">
-            <img src={slide.imageUrl} alt={slide.title} />
+          <h2 className="recording-selected-item__title">{rec.title}</h2>
+          <div className="recording-selected-item__image">
+            <img src={rec.imageUrl} alt={rec.title} />
             {/* <iframe
               src="https://docs.google.com/presentation/d/e/2PACX-1vT2xg78auIhsb4zBJQHuGqOMSgSLw3oWJ36lzPGJF7IwzZtKWZhXvWRJIfUWIAbU33pkiWLuqaibRo6/embed?start=false&loop=false&delayms=3000"
               frameborder="0"
@@ -26,4 +26,4 @@ const SlideSelectedItem = (props) => {
   );
 };
 
-export default SlideSelectedItem;
+export default RecordingSelectedItem;

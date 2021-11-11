@@ -12,6 +12,8 @@ import Searchbar from './homepage/components/SearchBar';
 import MainHeader from './shared/components/Navigation/MainHeader';
 import SlideSelected from './slide selected/pages/SlideSelected';
 import Button from './shared/components/FormElements/Button';
+import Recordings from './recording/pages/Recordings';
+import RecordingSelected from './recording selected/pages/RecordingSelected';
 import './App.css';
 
 const App = () => {
@@ -33,7 +35,7 @@ const App = () => {
             <Button to="/slides" view_homepage>
               Slides
             </Button>
-            <Button to="/" view_homepage>
+            <Button to="/recordings" view_homepage>
               Recordings
             </Button>
           </Route>
@@ -45,6 +47,16 @@ const App = () => {
             {/* <div className="wrapper"></div> */}
             <Carousel breakPoints={breakPoints}>
               <Slides />
+            </Carousel>
+          </Route>
+          <Route path="/recordings/:recId" exact>
+            <RecordingSelected />
+          </Route>
+          <Route path="/recordings" exact>
+            <h2 className="secondary-title">Recordings</h2>
+            {/* <div className="wrapper"></div> */}
+            <Carousel breakPoints={breakPoints}>
+              <Recordings />
             </Carousel>
           </Route>
           <Redirect to="/" />

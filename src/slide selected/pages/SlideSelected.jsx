@@ -20,9 +20,7 @@ const DUMMY_SLIDE = [
 
 const SlideSelected = () => {
   const { slideId } = useParams();
-  console.log(slideId);
   const loadedSlides = DUMMY_SLIDE.filter((slide) => slide.id === slideId);
-  console.log(loadedSlides);
   return <SlideSelectedItem items={loadedSlides} />;
 };
 
