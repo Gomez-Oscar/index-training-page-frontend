@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 
 import './RecordingSelectedItem.css';
 
@@ -9,16 +10,14 @@ const RecordingSelectedItem = (props) => {
         <React.Fragment>
           <h2 className="recording-selected-item__title">{rec.title}</h2>
           <div className="recording-selected-item__image">
-            <img src={rec.imageUrl} alt={rec.title} />
-            {/* <iframe
-              src="https://docs.google.com/presentation/d/e/2PACX-1vT2xg78auIhsb4zBJQHuGqOMSgSLw3oWJ36lzPGJF7IwzZtKWZhXvWRJIfUWIAbU33pkiWLuqaibRo6/embed?start=false&loop=false&delayms=3000"
-              frameborder="0"
-              width="480"
-              height="289"
-              allowfullscreen="true"
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"
-            ></iframe> */}
+            {/* <img src={rec.imageUrl} alt={rec.title} /> */}
+            <ReactPlayer
+              className="react-player"
+              url={rec.videoUrl}
+              controls
+              width="854px"
+              height="480px"
+            />
           </div>
         </React.Fragment>
       ))}
