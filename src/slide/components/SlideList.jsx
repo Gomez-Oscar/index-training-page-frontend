@@ -1,11 +1,19 @@
 import React from 'react';
 
 import SlideItem from './SlideItem';
+import Carousel from 'react-elastic-carousel';
 import './SlideList.css';
 
 const SlideList = (props) => {
+  const breakPoints = [
+    { width: 550, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+
   return (
-    <ul className="slides-list">
+    <Carousel breakPoints={breakPoints} className="slides-list">
       {props.items.map((slide) => {
         return (
           <SlideItem
@@ -16,7 +24,7 @@ const SlideList = (props) => {
           />
         );
       })}
-    </ul>
+    </Carousel>
   );
 };
 

@@ -16,9 +16,9 @@ const SlideSelectedItem = (props) => {
               frameBorder="0"
               width="900"
               height="480"
-              allowFullScreen="true"
-              mozallowfullscreen="true"
-              webkitallowfullscreen="true"
+              allowFullScreen={true}
+              mozallowfullscreen={true}
+              webkitallowfullscreen={true}
             ></iframe>
           </div>
         </React.Fragment>

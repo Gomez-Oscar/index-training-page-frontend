@@ -1,11 +1,19 @@
 import React from 'react';
 
 import RecordingItem from './RecordingItem';
+import Carousel from 'react-elastic-carousel';
 import './RecordingList.css';
 
 const RecordingList = (props) => {
+  const breakPoints = [
+    { width: 550, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+
   return (
-    <ul className="recordings-list">
+    <Carousel breakPoints={breakPoints} className="recordings-list">
       {props.items.map((rec) => {
         return (
           <RecordingItem
@@ -16,7 +24,7 @@ const RecordingList = (props) => {
           />
         );
       })}
-    </ul>
+    </Carousel>
   );
 };
 

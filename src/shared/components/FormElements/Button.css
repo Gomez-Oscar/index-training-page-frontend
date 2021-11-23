@@ -18,7 +18,8 @@
     color: white;
 }
 
-.search-button {
+
+/* .search-button {
     position: absolute;
     top: 0;
     right: 0;
@@ -34,7 +35,7 @@
 .search-button:hover {
     background-color: var(--blue-hover);
     color: white;
-}
+} */
 
 .view-homepage-button {
     display: block;
