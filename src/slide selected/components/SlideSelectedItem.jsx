@@ -9,8 +9,8 @@ const SlideSelectedItem = (props) => {
         <React.Fragment>
           <h2 className="slide-selected-item__title">{slide.title}</h2>
           <div className="slide-selected-item__image">
-            {/* <img src={slide.imageUrl} alt={slide.title} /> */}
-            <iframe
+            <img src={slide.image} alt={slide.title} />
+            {/* <iframe
               title="title"
               src={slide.slideUrl}
               frameBorder="0"
@@ -19,7 +19,7 @@ const SlideSelectedItem = (props) => {
               allowFullScreen={true}
               mozallowfullscreen={true}
               webkitallowfullscreen={true}
-            ></iframe>
+            ></iframe> */}
           </div>
         </React.Fragment>
       ))}
