@@ -8,7 +8,6 @@ body {
 }
 
 :root {
-    --blue-hover: #8ecce2;
     --dark-slate-gray: #424242;
     --purple-dark: #673ab7;
     --purple-ligth: #ae97d6;
@@ -18,10 +17,12 @@ body {
     --orange-t: #fe3b1f;
     --blue-cream-t: #bbcce2;
     --pink-ligth-t: #f9ebe4;
+    --pink-hover-t: lightsalmon;
     --pink-cream-t: #fad4c5;
     /* secondary colors */
-    --orange-ligth-t: #e55740;
+    --orange-ligth-t: #e34b31;
     --blue-dark-t: #0da0ba;
-    --blue-shine-t: #4ae2fc;
+    --blue-hover: #8ecce2;
     --blue-ligth-t: #9de9f6;
+    --blue-shine-t: #4ae2fc;
 }

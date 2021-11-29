@@ -16,7 +16,7 @@
 }
 
 .recording-item__content:hover {
-    background-color: var(--blue-hover);
+    background-color: var(--pink-hover-t);
 }
 
 .recording-item__title {
@@ -24,7 +24,7 @@
     text-align: center;
     margin-top: 0;
     margin-bottom: 5px;
-    color: var(--purple-dark);
+    color: var(--purple-t);
     font-weight: bold;
 }
 

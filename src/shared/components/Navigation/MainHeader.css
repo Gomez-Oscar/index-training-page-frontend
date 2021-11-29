@@ -21,16 +21,19 @@ main {
     margin-top: 5rem;
 }
 
-
-/*Link*/
-
 .main-header a {
     text-decoration: none;
     color: white;
 }
 
-@media (min-width: 768px) {
+.icon {
+    width: 2.3rem;
+    margin-right: 1rem;
+}
+
+
+/* @media (min-width: 768px) {
     .main-header {
         justify-content: space-between;
     }
-}
+} */

@@ -3,14 +3,14 @@
     display: block;
     margin-top: 10%;
     margin-bottom: 5%;
-    color: var(--purple-dark);
+    color: var(--purple-t);
 }
 
 .secondary-title {
     text-align: center;
     display: block;
     margin-top: 5%;
-    color: var(--purple-ligth);
+    color: var(--purple-t);
 }
 
 .wrapper {
