@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
 import RecordingSelectedItem from '../components/RecordingSelectedItem';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 
-const DUMMY_RECORDINGS = [
+/* const DUMMY_RECORDINGS = [
   {
     id: 'r1',
     title: 'Inland Training',
@@ -48,12 +49,48 @@ const DUMMY_RECORDINGS = [
       'https://www.elegantthemes.com/blog/wp-content/uploads/2018/04/asana-featured-image.png',
     videoUrl: 'https://www.youtube.com/watch?v=DqpL5UtJHus&ab_channel=Fazt',
   },
-];
+]; */
 
 const RecordingSelected = () => {
   const { recId } = useParams();
-  const loadedRecordings = DUMMY_RECORDINGS.filter((rec) => rec.id === recId);
-  return <RecordingSelectedItem items={loadedRecordings} />;
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadedRec, setLoadedRec] = useState();
+
+  useEffect(() => {
+    const sendRequest = async () => {
+      setIsLoading(true);
+
+      try {
+        const response = await fetch(
+          'http://localhost:5000/api/recordings/' + recId
+        );
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
+
+        setLoadedRec(responseData.recording);
+      } catch (error) {
+        setIsLoading(false);
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+    sendRequest();
+  }, [recId]);
+
+  return (
+    <React.Fragment>
+      {isLoading && (
+        <div className="center">
+          <LoadingSpinner />
+        </div>
+      )}
+      {!isLoading && loadedRec && <RecordingSelectedItem items={loadedRec} />}
+    </React.Fragment>
+  );
 };
 
 export default RecordingSelected;

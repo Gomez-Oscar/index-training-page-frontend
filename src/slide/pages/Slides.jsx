@@ -1,12 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import SlideList from '../components/SlideList';
+import LoadingSpinner from '../../shared/components/UIElements/LoadingSpinner';
 
-// first talent images
-// https://a.fsdn.com/con/app/proj/talent-com.s/screenshots/img-slider-1.png/1000/auto/1
-// https://hrtechfeed.com/wp-content/uploads/2019/12/talent.com_.jpg
-
-const DUMMY_SLIDES = [
+/* const DUMMY_SLIDES = [
   {
     id: 's1',
     title: 'Inland',
@@ -41,10 +38,46 @@ const DUMMY_SLIDES = [
     image:
       'https://www.elegantthemes.com/blog/wp-content/uploads/2018/04/asana-featured-image.png',
   },
-];
+]; */
 
 const Slides = () => {
-  return <SlideList items={DUMMY_SLIDES}></SlideList>;
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadedSlides, setLoadedSlides] = useState();
+
+  useEffect(() => {
+    const sendRequest = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('http://localhost:5000/api/slides');
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
+
+        setLoadedSlides(responseData.slides);
+      } catch (error) {
+        setIsLoading(false);
+        console.log(error);
+      }
+      setIsLoading(false);
+    };
+    sendRequest();
+  }, []);
+
+  return (
+    <React.Fragment>
+      {isLoading && (
+        <div className="center">
+          <LoadingSpinner />
+        </div>
+      )}
+      {!isLoading && loadedSlides && (
+        <SlideList items={loadedSlides}></SlideList>
+      )}
+    </React.Fragment>
+  );
 };
 
 export default Slides;
