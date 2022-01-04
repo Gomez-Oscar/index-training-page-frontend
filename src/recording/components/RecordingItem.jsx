@@ -15,6 +15,12 @@ const RecordingItem = (props) => {
         <Button to={`/recordings/${props.id}`} view>
           View
         </Button>
+        {/* <Button to={`/recordings`} view>
+          Update
+        </Button>
+        <Button to={`/recordings`} view>
+          Delete
+        </Button> */}
       </Card>
     </li>
   );

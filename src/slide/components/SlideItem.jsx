@@ -15,6 +15,12 @@ const SlideItem = (props) => {
         <Button to={`/slides/${props.id}`} view>
           View
         </Button>
+        {/* <Button to={`/slides`} view>
+          Update
+        </Button>
+        <Button to={`/slides`} view>
+          Delete
+        </Button> */}
       </Card>
     </li>
   );
