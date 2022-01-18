@@ -11,6 +11,7 @@
     border: 1px solid var(--orange-t);
     cursor: pointer;
     color: var(--orange-t);
+    background-color: var(--pink-cream-t);
     text-decoration: none;
 }
 
@@ -56,4 +57,33 @@
 .header-button:hover {
     background-color: var(--orange-t);
     color: white;
+}
+
+.modal-button {
+    display: block;
+    text-align: center;
+    width: 50%;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 3% auto 3% auto;
+    border-radius: 5px;
+    border: 1px solid var(--orange-t);
+    cursor: pointer;
+    color: var(--orange-t);
+    text-decoration: none;
+}
+
+.modal-button:hover {
+    background-color: var(--orange-t);
+    color: white;
+}
+
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:active {
+    background: #ccc;
+    color: #979797;
+    border-color: #ccc;
+    cursor: not-allowed;
 }

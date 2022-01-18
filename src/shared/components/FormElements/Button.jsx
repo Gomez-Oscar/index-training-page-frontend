@@ -10,7 +10,7 @@ const Button = (props) => {
         className={`${props.view && 'view-button'} 
         ${props.view_homepage && 'view-homepage-button'} ${
           props.header && 'header-button'
-        }`}
+        } ${props.modal && 'modal-button'}`}
         href={props.href}
       >
         {props.children}
@@ -25,7 +25,7 @@ const Button = (props) => {
         className={`${props.view && 'view-button'} 
         ${props.view_homepage && 'view-homepage-button'} ${
           props.header && 'header-button'
-        }`}
+        } ${props.modal && 'modal-button'}`}
       >
         {props.children}
       </Link>
@@ -36,7 +36,7 @@ const Button = (props) => {
       className={`${props.view && 'view-button'} 
     ${props.view_homepage && 'view-homepage-button'} ${
         props.header && 'header-button'
-      }`}
+      } ${props.modal && 'modal-button'}`}
       type={props.type}
       onClick={props.onClick}
       disabled={props.disabled}
