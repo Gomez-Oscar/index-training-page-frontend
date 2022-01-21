@@ -33,6 +33,10 @@ const NewItem = () => {
         value: '',
         isValid: false,
       },
+      image: {
+        value: '',
+        isValid: false,
+      },
     },
     false
   );
@@ -56,7 +60,8 @@ const NewItem = () => {
         },
         body: JSON.stringify({
           title: formState.inputs.title.value,
-          image: 'http://localhost:5000/slides-pdf\\images\\test.jpg', // image upload
+          image: formState.inputs.image.value,
+          // image: 'http://localhost:5000/slides-pdf\\images\\test.jpg', // image upload
           type: formState.inputs.type.value,
           url: formState.inputs.url.value,
         }),
@@ -106,6 +111,14 @@ const NewItem = () => {
           type="text"
           label="URL"
           errorText="Enter a valid url"
+          validators={[VALIDATOR_REQUIRE(), VALIDATOR_URL()]}
+          onInput={inputHandler}
+        />
+        <Input
+          id="image"
+          type="text"
+          label="Image"
+          errorText="Enter a valid image url"
           validators={[VALIDATOR_REQUIRE(), VALIDATOR_URL()]}
           onInput={inputHandler}
         />
