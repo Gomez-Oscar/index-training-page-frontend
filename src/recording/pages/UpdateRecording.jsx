@@ -13,11 +13,11 @@ import { useForm } from '../../shared/hooks/form-hook';
 
 import '../../shared/components/NewItem/NewItem.css';
 
-const UpdateSlide = () => {
-  const { slideId } = useParams();
+const UpdateRecording = () => {
+  const { recId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
-  const [loadedSlide, setLoadedSlide] = useState();
+  const [loadedRecording, setLoadedRecording] = useState();
   const history = useHistory();
 
   const [formState, inputHandler, setFormData] = useForm(
@@ -40,7 +40,7 @@ const UpdateSlide = () => {
 
       try {
         const response = await fetch(
-          'http://localhost:5000/api/slides/' + slideId
+          'http://localhost:5000/api/recordings/' + recId
         );
 
         const responseData = await response.json();
@@ -49,7 +49,7 @@ const UpdateSlide = () => {
           throw new Error(responseData.message);
         }
 
-        setLoadedSlide(responseData.slide);
+        setLoadedRecording(responseData.recording);
       } catch (error) {
         setIsLoading(false);
         console.log(error);
@@ -57,33 +57,33 @@ const UpdateSlide = () => {
       setIsLoading(false);
     };
     sendRequest();
-  }, [slideId]);
+  }, [recId]);
 
   useEffect(() => {
-    if (loadedSlide) {
+    if (loadedRecording) {
       setFormData(
         {
           title: {
-            value: loadedSlide.title,
+            value: loadedRecording.title,
             isValid: true,
           },
           url: {
-            value: loadedSlide.url,
+            value: loadedRecording.url,
             isValid: true,
           },
         },
         true
       );
     }
-  }, [setFormData, loadedSlide]);
+  }, [setFormData, loadedRecording]);
 
-  const slideUpdateSubmitHandler = async (event) => {
+  const recordingUpdateSubmitHandler = async (event) => {
     event.preventDefault();
 
     try {
       setIsLoading(true);
       const response = await fetch(
-        `http://localhost:5000/api/slides/${slideId}`,
+        `http://localhost:5000/api/recordings/${recId}`,
         {
           method: 'PATCH',
           headers: {
@@ -102,7 +102,7 @@ const UpdateSlide = () => {
       }
 
       setIsLoading(false);
-      history.push('/slides');
+      history.push('/recordings');
     } catch (err) {
       setIsLoading(false);
       setError(err.message || 'Something went wrong, please try again.');
@@ -124,8 +124,8 @@ const UpdateSlide = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={errorHandler} />
-      {!isLoading && loadedSlide && (
-        <form className="new-item-form" onSubmit={slideUpdateSubmitHandler}>
+      {!isLoading && loadedRecording && (
+        <form className="new-item-form" onSubmit={recordingUpdateSubmitHandler}>
           <Input
             id="title"
             type="text"
@@ -147,7 +147,7 @@ const UpdateSlide = () => {
             initialValid={formState.inputs.url.isValid}
           />
           <Button type="submit" disabled={!formState.isValid}>
-            Edit Slide
+            Edit Recording
           </Button>
         </form>
       )}
@@ -155,4 +155,4 @@ const UpdateSlide = () => {
   );
 };
 
-export default UpdateSlide;
+export default UpdateRecording;

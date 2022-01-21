@@ -10,7 +10,7 @@ const SlideSelectedItem = (props) => {
           <React.Fragment>
             <div className="slide-images">
               <iframe
-                src={slide.pdf}
+                src={slide.url}
                 frameborder="0"
                 title="title"
                 width="950px"

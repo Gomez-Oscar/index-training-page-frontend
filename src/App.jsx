@@ -17,7 +17,8 @@ import RecordingSelected from './recording selected/pages/RecordingSelected';
 import NewItem from './shared/components/NewItem/NewItem';
 import Login from './login/components/Login';
 import { AuthContenxt } from './shared/context/auth-context';
-// import UpdateSlide from './slide/pages/UpdateSlide';
+import UpdateSlide from './slide/pages/UpdateSlide';
+import UpdateRecording from './recording/pages/UpdateRecording';
 import './App.css';
 
 const App = () => {
@@ -110,9 +111,12 @@ const App = () => {
           <h2 className="secondary-title">Recordings</h2>
           <Recordings />
         </Route>
-        {/* <Route path="/update/:slideId" exact>
-                <UpdateSlide />
-              </Route> */}
+        <Route path="/update-slide/:slideId" exact>
+          <UpdateSlide />
+        </Route>
+        <Route path="/update-recording/:recId" exact>
+          <UpdateRecording />
+        </Route>
         <Route path="/new-item" exact>
           <NewItem />
         </Route>

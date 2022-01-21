@@ -21,6 +21,7 @@ const RecordingList = (props) => {
             id={rec.id}
             image={rec.image}
             title={rec.title}
+            onDelete={props.onDeleteRecording}
           />
         );
       })}

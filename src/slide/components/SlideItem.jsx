@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Card from '../../shared/components/UIElements/Card';
 import Button from '../../shared/components/FormElements/Button';
@@ -10,10 +11,32 @@ import './SlideItem.css';
 const SlideItem = (props) => {
   const auth = useContext(AuthContenxt);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const history = useHistory();
 
   const showDeleteWarningHandler = () => setShowConfirmModal(true);
   const cancelDeleteHandler = () => setShowConfirmModal(false);
-  const confirmDeleteHandler = () => console.log('Deleting');
+
+  const confirmDeleteHandler = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/api/slides/${props.id}`,
+        {
+          method: 'DELETE',
+        }
+      );
+
+      const responseData = await response.json();
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+
+      setShowConfirmModal(false);
+      props.onDelete(props.id);
+      history.push('/slides');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <React.Fragment>
@@ -44,7 +67,7 @@ const SlideItem = (props) => {
             View
           </Button>
           {auth.isLoggedIn && (
-            <Button to={`/update/${props.id}`} view>
+            <Button to={`/update-slide/${props.id}`} view>
               Update
             </Button>
           )}

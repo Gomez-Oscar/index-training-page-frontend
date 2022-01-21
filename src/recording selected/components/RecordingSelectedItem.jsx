@@ -11,7 +11,7 @@ const RecordingSelectedItem = (props) => {
           <div className="recording-selected-item__image">
             <ReactPlayer
               className="react-player"
-              url={rec.video}
+              url={rec.url}
               controls
               width="950px"
               height="550px"

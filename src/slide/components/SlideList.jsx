@@ -21,6 +21,7 @@ const SlideList = (props) => {
             id={slide.id}
             image={slide.image}
             title={slide.title}
+            onDelete={props.onDeleteSlide}
           />
         );
       })}
